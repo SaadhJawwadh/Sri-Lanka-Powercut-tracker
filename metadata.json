@@ -1,0 +1,6 @@
+{
+  "name": "CEB Power Cut Schedule & Map",
+  "description": "Interactive Sri Lanka power cut schedule and grid map for CEB demand management blackout timetables, feeder search, and live outage countdowns.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "summary": "Detailed implementation plan for the interactive Sri Lanka Power Cut Schedule Map application. Structures the digitized schedule data from CEB demand management tables (Oct 19–21, 2026), provides an interactive vector map of Sri Lanka with all Grid Substations and feeder groups, an instant search bar with live autocomplete, and real-time power cut status countdown indicators.",
+  "updatedAt": "2026-10-19T14:06:56.089493566Z",
+  "requestFeedback": true,
+  "userFacing": true
+}
