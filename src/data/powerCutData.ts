@@ -514,7 +514,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
   },
   {
     name: "Kappalthurai",
-    displayName: "Kappalthurai",
+    displayName: "Kappalthurai (Kappalthure)",
     sinhalaName: "කප්පල්තුරෙයි",
     district: "Trincomalee",
     province: "Eastern",
@@ -524,7 +524,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
       2: ["3"],
       3: ["4"],
     },
-    townAliases: ["China Bay", "Trincomalee South", "Kinniya", "Clappenburg", "Muttur Highway"],
+    townAliases: ["Kappalthure", "China Bay", "Trincomalee South", "Kinniya", "Clappenburg", "Muttur Highway"],
   },
   {
     name: "Katunayaka",
@@ -541,7 +541,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
   },
   {
     name: "Kegalle",
-    displayName: "Kegalle",
+    displayName: "Kegalle (Kegalla)",
     sinhalaName: "කෑගල්ල",
     district: "Kegalle",
     province: "Sabaragamuwa",
@@ -551,7 +551,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
       1: ["2", "7", "4"],
       4: ["1", "6", "8"],
     },
-    townAliases: ["Mawanella", "Rambukkana", "Nelundeniya", "Galigamuwa", "Hemmathagama"],
+    townAliases: ["Kegalla", "Mawanella", "Rambukkana", "Nelundeniya", "Galigamuwa", "Hemmathagama"],
   },
   {
     name: "Kelaniya",
@@ -625,17 +625,17 @@ const RAW_SUBSTATIONS: RawGSS[] = [
   },
   {
     name: "Kolonnawa",
-    displayName: "Kolonnawa & GIS",
+    displayName: "Kolonnawa (Old & GIS)",
     sinhalaName: "කොලොන්නාව",
     district: "Colombo",
     province: "Western",
     lat: 6.932,
     lng: 79.885,
     groups: {
-      2: ["17", "18", "old-8"],
-      3: ["GIS-6"],
+      2: ["17", "18", "8 (Kolonnawa old)"],
+      3: ["6 (Kolonnawa GIS)"],
     },
-    townAliases: ["Wellampitiya", "Sedawatta", "Grandpass", "Dematagoda", "Orugodawatta"],
+    townAliases: ["Kolonnawa old", "Kolonnawa GIS", "Wellampitiya", "Sedawatta", "Grandpass", "Dematagoda", "Orugodawatta"],
   },
   {
     name: "Kosgama",
@@ -646,9 +646,8 @@ const RAW_SUBSTATIONS: RawGSS[] = [
     lat: 6.921,
     lng: 80.182,
     groups: {
-      1: ["2"],
-      3: ["3"],
-      4: ["1", "5", "6"],
+      1: ["2", "3", "6"],
+      4: ["1", "5"],
     },
     townAliases: ["Avissawella", "Puwakpitiya", "Hanwella", "Kaluaggala", "Salawa"],
   },
@@ -675,8 +674,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
     lat: 7.485,
     lng: 80.364,
     groups: {
-      2: ["2"],
-      4: ["8", "10"],
+      1: ["2", "8", "10"],
     },
     townAliases: ["Mawathagama", "Polgahawela", "Narammala", "Wariyapola", "Ibbagamuwa", "Mallawapitiya"],
   },
@@ -716,7 +714,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
     lat: 6.932,
     lng: 80.381,
     groups: {
-      2: ["2"],
+      1: ["2"],
     },
     townAliases: ["Deraniyagala", "Dehiowita", "Noori", "Magala"],
   },
@@ -1170,9 +1168,7 @@ const RAW_SUBSTATIONS: RawGSS[] = [
     lat: 6.671,
     lng: 80.548,
     groups: {
-      1: ["1"],
-      2: ["2"],
-      4: ["5", "6", "7"],
+      1: ["1", "2", "5", "6", "7"],
     },
     townAliases: ["Balangoda Valley", "Rassagala", "Madampe Estate"],
   },
@@ -1185,135 +1181,27 @@ const RAW_SUBSTATIONS: RawGSS[] = [
     lat: 6.912,
     lng: 80.521,
     groups: {
-      3: ["4"],
-      4: ["6", "7"],
+      1: ["4", "6", "7"],
     },
     townAliases: ["Norton Bridge", "Maskeliya", "Hatton", "Laxapana", "Ginigathhena"],
   },
 ];
 
-// District-calibrated SVG coordinates ensuring every Grid Substation sits accurately
-// inside its administrative district boundary on the Sri Lanka vector map without overlapping.
-const CALIBRATED_SVG_COORDS: Record<string, { x: number; y: number }> = {
-  // Northern Province
-  Chunnakam: { x: 168, y: 46 },
-  Kilinochchi: { x: 188, y: 106 },
-  Mannar: { x: 122, y: 164 },
-  Vavuniya: { x: 198, y: 206 },
-
-  // North Central Province
-  Anuradhapura: { x: 182, y: 268 },
-  "New Anuradhapura": { x: 206, y: 262 },
-  "Old Anuradhapura": { x: 170, y: 278 },
-  Habarana: { x: 236, y: 306 },
-  Polonnaruwa: { x: 278, y: 312 },
-
-  // North Western Province
-  Puttalam: { x: 98, y: 276 },
-  Chilaw: { x: 96, y: 342 },
-  Madampe: { x: 102, y: 356 },
-  Bolawatta: { x: 108, y: 372 },
-  Kochchikade: { x: 100, y: 384 },
-  Maho: { x: 162, y: 338 },
-  Kurunegala: { x: 176, y: 386 },
-  Mallewa: { x: 192, y: 374 },
-  Pannala: { x: 138, y: 406 },
-
-  // Eastern Province
-  Trincomalee: { x: 308, y: 216 },
-  Kappalthurai: { x: 292, y: 236 },
-  Valachchenai: { x: 334, y: 326 },
-  Vavunathivu: { x: 348, y: 364 },
-  Ampara: { x: 338, y: 436 },
-  Inginiyagala: { x: 322, y: 456 },
-
-  // Central Province
-  Naula: { x: 232, y: 356 },
-  Ukuwela: { x: 228, y: 392 },
-  Kiribathkumbura: { x: 206, y: 432 },
-  Pallekele: { x: 234, y: 428 },
-  Rantambe: { x: 250, y: 438 },
-  Nawalapitiya: { x: 200, y: 456 },
-  Polpitiya: { x: 196, y: 476 },
-  Wimalasurendra: { x: 204, y: 504 },
-  Nuwara_Eliya: { x: 230, y: 492 },
-  Wara_Eliya: { x: 218, y: 498 },
-  Ragala: { x: 248, y: 482 },
-  Udupussellawa: { x: 256, y: 496 },
-
-  // Sabaragamuwa Province
-  Thulhiriya: { x: 154, y: 442 },
-  Kegalle: { x: 174, y: 454 },
-  Maliboda: { x: 172, y: 488 },
-  Ratnapura: { x: 174, y: 534 },
-  Wewelwatta: { x: 196, y: 538 },
-  Balangoda: { x: 216, y: 528 },
-  Embilipitiya: { x: 224, y: 572 },
-
-  // Uva Province
-  Mahiyanganaya: { x: 268, y: 462 },
-  Badulla: { x: 276, y: 502 },
-  Monaragala: { x: 304, y: 552 },
-
-  // Western Province — Gampaha District
-  Katunayaka: { x: 96, y: 412 },
-  Kotugoda: { x: 114, y: 418 },
-  Veyangoda: { x: 134, y: 422 },
-  Aniyakanda: { x: 106, y: 432 },
-  Kerawalapitiya: { x: 96, y: 444 },
-  Kelaniya: { x: 112, y: 454 },
-  Sapugaskanda: { x: 124, y: 446 },
-  Biyagama: { x: 138, y: 454 },
-
-  // Western Province — Colombo District
-  "SUB A": { x: 94, y: 468 },
-  "Sub N": { x: 103, y: 470 },
-  Kolonnawa: { x: 113, y: 471 },
-  "SUB C": { x: 95, y: 477 },
-  "Sub M": { x: 105, y: 478 },
-  "SUB I": { x: 96, y: 485 },
-  Sri_Jpura: { x: 111, y: 485 },
-  Athurugiriya: { x: 123, y: 484 },
-  Kosgama: { x: 134, y: 476 },
-  Seethawaka: { x: 141, y: 486 },
-  Dehiwala: { x: 98, y: 494 },
-  Pannipitiya: { x: 118, y: 495 },
-  Ratmalana: { x: 101, y: 503 },
-  Kesbewa: { x: 113, y: 505 },
-
-  // Western Province — Kalutara District
-  Panadura: { x: 102, y: 518 },
-  Bandaragama: { x: 116, y: 522 },
-  Horana: { x: 130, y: 524 },
-  Kalutara: { x: 105, y: 540 },
-  Mathugama: { x: 128, y: 554 },
-
-  // Southern Province
-  Ambalangoda: { x: 114, y: 590 },
-  Baddegama: { x: 130, y: 602 },
-  "New Galle": { x: 134, y: 626 },
-  Galle: { x: 124, y: 622 },
-  Deniyaya: { x: 176, y: 606 },
-  Matara: { x: 174, y: 644 },
-  Beliatta: { x: 210, y: 636 },
-  Hambantota: { x: 248, y: 628 },
-};
-
-// Build fully hydrated GridSubstation list with calibrated SVG coordinates
+// Build fully hydrated GridSubstation list using unified geographic projection
+// aligned with the 93-point Sri Lanka coastline and district boundaries.
 export const GRID_SUBSTATIONS: GridSubstation[] = (() => {
   const placed: Array<{ x: number; y: number }> = [];
 
   return RAW_SUBSTATIONS.map((raw) => {
-    const calibrated = CALIBRATED_SVG_COORDS[raw.name];
-    let { x, y } = calibrated ? { ...calibrated } : projectCoordinates(raw.lat, raw.lng);
+    let { x, y } = projectCoordinates(raw.lat, raw.lng);
 
-    // Ensure no two pins sit on the exact same pixel
-    for (let attempt = 0; attempt < 8; attempt++) {
-      const collision = placed.find((p) => Math.hypot(p.x - x, p.y - y) < 6.5);
+    // Ensure closely spaced urban substations (e.g., Colombo SUB A/C/I/M/N) are clearly separated
+    for (let attempt = 0; attempt < 10; attempt++) {
+      const collision = placed.find((p) => Math.hypot(p.x - x, p.y - y) < 5.5);
       if (!collision) break;
-      const angle = (attempt * Math.PI) / 3;
-      x = Math.round((x + Math.cos(angle) * 7) * 10) / 10;
-      y = Math.round((y + Math.sin(angle) * 7) * 10) / 10;
+      const angle = (attempt * Math.PI) / 4;
+      x = Math.round((x + Math.cos(angle) * 5.6) * 10) / 10;
+      y = Math.round((y + Math.sin(angle) * 5.6) * 10) / 10;
     }
     placed.push({ x, y });
 

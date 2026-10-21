@@ -95,9 +95,9 @@ export const TimelineScrubber: React.FC<TimelineScrubberProps> = ({
         </div>
 
         {/* Live SLST Clock & Mode Toggle */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex flex-wrap items-center justify-between w-full sm:w-auto gap-2.5">
           {slstString && (
-            <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-400 font-mono tabular-nums">
+            <div className="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono tabular-nums">
               <span>Colombo Time:</span>
               <span className="text-slate-200 font-semibold">{slstString}</span>
             </div>
@@ -107,7 +107,7 @@ export const TimelineScrubber: React.FC<TimelineScrubberProps> = ({
             type="button"
             onClick={onToggleLiveMode}
             aria-pressed={isLiveMode}
-            className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-all flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 ${
+            className={`px-3 py-1.5 min-h-[36px] text-xs font-semibold rounded-lg border transition-all flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 ${
               isLiveMode
                 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-sm'
                 : 'bg-slate-800 text-slate-300 hover:text-white border-slate-700'
@@ -125,12 +125,12 @@ export const TimelineScrubber: React.FC<TimelineScrubberProps> = ({
       </div>
 
       {/* Range Slider */}
-      <div className="relative flex flex-col gap-1.5">
+      <div className="relative flex flex-col gap-2">
         <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono px-0.5">
           <label htmlFor="peak-time-slider" className="font-sans text-slate-400">
-            Scrub Evening Peak Window (04:00 PM – 09:00 PM):
+            Scrub Evening Peak (04:00 PM – 09:00 PM):
           </label>
-          <span className="tabular-nums">{formatHourFloat(sliderValue)}</span>
+          <span className="tabular-nums font-semibold text-slate-200">{formatHourFloat(sliderValue)}</span>
         </div>
         <input
           id="peak-time-slider"
@@ -144,11 +144,11 @@ export const TimelineScrubber: React.FC<TimelineScrubberProps> = ({
             if (isLiveMode) onToggleLiveMode();
             onChangeHourFloat(parseFloat(e.target.value));
           }}
-          className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500/50"
+          className="w-full h-2.5 sm:h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-rose-500 touch-pan-y focus:outline-none focus:ring-2 focus:ring-rose-500/50"
         />
 
         {/* Quick Slot Buttons */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-1">
           {schedule.slots.map((slot) => {
             const isSlotActive =
               currentHourFloat >= slot.startHour && currentHourFloat < slot.endHour;

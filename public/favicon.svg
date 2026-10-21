@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#080C14" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" stroke="#1E293B" stroke-width="3" />
+  <!-- Sri Lanka Island Silhouette -->
+  <path
+    d="M27.5 8.5C29.5 8.8 31.8 11.2 33.6 13.8C35.8 16.9 39.2 20.5 41.4 25.1C43.5 29.5 45.8 32.8 47.5 37.8C49.2 42.8 49.4 47.9 46.8 51.9C44.2 55.8 38.5 57.5 33.2 57.8C28.4 58.1 24.1 56.2 21.8 52.4C19.5 48.6 19.2 43.4 18.8 38.2C18.4 33.1 18.9 27.6 20.2 22.8C21.5 18.1 23.2 14.5 24.4 11.4C25.2 9.4 26.2 8.3 27.5 8.5Z"
+    fill="#132038"
+    stroke="#38BDF8"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+  />
+  <!-- High-Voltage Power Bolt -->
+  <path
+    d="M35.5 19L23.5 34.5H32L28.5 47L41.5 30.5H32.8L35.5 19Z"
+    fill="#F43F5E"
+    stroke="#FFE4E6"
+    stroke-width="1.2"
+    stroke-linejoin="round"
+  />
+</svg>

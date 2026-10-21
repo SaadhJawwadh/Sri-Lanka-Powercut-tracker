@@ -213,39 +213,34 @@ export const ScheduleTableView: React.FC<ScheduleTableViewProps> = ({
                       {/* Group */}
                       <td className="py-3 px-4">
                         <span
-                          className="px-2 py-0.5 rounded text-[11px] font-bold"
-                          style={{
-                            color: grpColor.hex,
-                            backgroundColor: grpColor.bgRgba,
-                          }}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold"
+                          style={{ color: grpColor.hex }}
                         >
-                          Group 0{row.group}
+                          <span
+                            className="w-2 h-2 rounded-full shrink-0"
+                            style={{ backgroundColor: grpColor.hex }}
+                            aria-hidden="true"
+                          />
+                          <span>Group 0{row.group}</span>
                         </span>
                       </td>
 
                       {/* Feeder Numbers */}
                       <td className="py-3 px-4 text-slate-200">
-                        <div className="flex flex-wrap gap-1">
-                          {row.feeders.map((fdr) => (
-                            <span
-                              key={fdr}
-                              className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-[11px] text-slate-300"
-                            >
-                              {fdr}
-                            </span>
-                          ))}
-                        </div>
+                        <span className="text-xs text-slate-200">
+                          {row.feeders.join(', ')}
+                        </span>
                       </td>
 
                       {/* Interruption Time */}
                       <td className="py-3 px-4 text-slate-300 tabular-nums">
                         {row.timeSlot ? (
-                          <div className="flex flex-col">
+                          <div className="flex flex-col gap-0.5">
                             <span className="font-semibold text-white">
-                              {row.timeSlot.label}
+                              {row.timeSlot.label} (1 hr)
                             </span>
-                            <span className="text-[10px] text-slate-400 font-sans">
-                              {row.timeSlot.disconnectTime}
+                            <span className="text-[11px] text-slate-400 font-sans">
+                              Disconnect: {row.timeSlot.disconnectTime} · Restore: {row.timeSlot.restorationTime}
                             </span>
                           </div>
                         ) : (
